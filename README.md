@@ -113,3 +113,27 @@ Project structure (important files/folders):
   - Map event colors to the beige palette
 
   If you want any of these next steps, tell me which to prioritize.
+
+## Deploying to Vercel (app) and Storybook (site)
+
+Recommended setup: deploy the app (Vite build) to one Vercel project and deploy Storybook to a separate Vercel project (or use GH Pages/Chromatic for Storybook).
+
+I added two example Vercel configs:
+- `vercel.json` — default app deployment (build command: `npm run build`, output `dist`).
+- `vercel-storybook.json` — Storybook deployment (build command: `npm run build-storybook`, output `storybook-static`).
+
+Deploy via Vercel Dashboard (two projects)
+1. Create Project A (App): connect your GitHub repo, set Root to repository root, build command `npm run build`, output directory `dist`. Vercel will use `vercel.json` automatically.
+2. Create Project B (Storybook): connect same repo, in Advanced settings set "Build Command" to `npm run build-storybook` and "Output Directory" to `storybook-static`. Or use the CLI with the local config:
+
+```powershell
+npm run build-storybook
+vercel --prod --local-config vercel-storybook.json
+```
+
+Or deploy Storybook to GitHub Pages (already configured): the GitHub Action `deploy-storybook.yml` will publish `storybook-static` to the `gh-pages` branch when you push to `main`.
+
+If you want, I can:
+- Push a follow-up commit to remove `storybook-static/` from the repository and add it to `.gitignore` so Vercel doesn't accidentally pick up the static folder.
+- Create the two Vercel projects for you (you'll need to connect your GitHub account in Vercel UI).
+
