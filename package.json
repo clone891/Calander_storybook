@@ -13,18 +13,23 @@
     "build-storybook:docs": "sb build -o docs"
   },
   "dependencies": {
-    "react": "^18.2.0",
-    "react-dom": "^18.2.0",
     "clsx": "^2.1.1",
-    "date-fns": "^2.30.0"
+    "date-fns": "^2.30.0",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
   },
   "devDependencies": {
     "@eslint/js": "^9.39.1",
+    "@storybook/addon-essentials": "7.6.20",
+    "@storybook/addon-interactions": "7.6.20",
+    "@storybook/cli": "7.6.20",
+    "@storybook/react-vite": "7.6.20",
     "@types/node": "^24.10.0",
     "@types/react": "^18.2.21",
     "@types/react-dom": "^18.2.7",
     "@vitejs/plugin-react": "^4.2.0",
     "autoprefixer": "^10.4.16",
+    "chromatic": "^13.3.3",
     "eslint": "^9.39.1",
     "eslint-plugin-react-hooks": "^7.0.1",
     "eslint-plugin-react-refresh": "^0.4.24",
@@ -33,10 +38,6 @@
     "tailwindcss": "^3.3.5",
     "typescript": "~5.9.3",
     "typescript-eslint": "^8.46.3",
-    "vite": "^5.0.0",
-    "@storybook/react-vite": "7.6.20",
-    "@storybook/addon-essentials": "7.6.20",
-    "@storybook/addon-interactions": "7.6.20"
-    ,"@storybook/cli": "7.6.20"
+    "vite": "^5.0.0"
   }
 }
